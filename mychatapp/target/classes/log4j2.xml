@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="warn" name="catalina" packages="com.whoeverlovely.mychatapp">
+    <Appenders>
+         <Console name="console" target="SYSTEM_OUT">
+    <PatternLayout pattern="%m%n"/>
+        </Console>
+            <File name="catalina" fileName="${catalina.base}/logs/catalina.log">
+              <PatternLayout>
+                <Pattern>%d %p %c{1.} [%t] %m%n</Pattern>
+              </PatternLayout>
+    </File>
+        <Async name="Async">
+              <AppenderRef ref="catalina"/>
+       </Async>
+    </Appenders>
+      <Loggers>
+        <Root level="trace">
+          <AppenderRef ref="Async"/>
+         <AppenderRef ref="console"/>
+        </Root>
+  </Loggers>
+</Configuration> 

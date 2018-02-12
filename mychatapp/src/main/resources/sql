@@ -1,0 +1,17 @@
+create table user(
+id INTEGER PRIMARY KEY,
+password TEXT,
+chat_token TEXT,
+chat_token_generate_time TIMESTAMP,
+pushy_token TEXT not null,
+status INTEGER
+);
+
+create table message(
+id INTEGER PRIMARY KEY,
+sender_user_id INTEGER,
+receiver_user_id INTEGER,
+status INTEGER,
+message_content TEXT,
+receive_time TIMESTAMP
+);
